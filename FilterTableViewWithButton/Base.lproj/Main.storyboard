@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ijx-pI-060">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FilterTableViewWithButton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TdI-vw-k7F">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MineralCell" id="fnc-F1-KEb" customClass="MineralTableViewCell" customModule="FilterTableViewWithButton" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fnc-F1-KEb" id="ASf-wg-F7L">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YRf-J2-1dE">
+                                                    <rect key="frame" x="0.5" y="10" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="PYp-ii-CQJ"/>
+                                                        <constraint firstAttribute="width" constant="30" id="sAM-Jt-9fI"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yU1-JC-fN2">
+                                                    <rect key="frame" x="166.5" y="10.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="YRf-J2-1dE" secondAttribute="bottom" id="Af0-wb-DXg"/>
+                                                <constraint firstItem="yU1-JC-fN2" firstAttribute="centerY" secondItem="ASf-wg-F7L" secondAttribute="centerY" id="B5x-Dq-HCn"/>
+                                                <constraint firstItem="YRf-J2-1dE" firstAttribute="centerY" secondItem="ASf-wg-F7L" secondAttribute="centerY" id="QVV-gt-3ln"/>
+                                                <constraint firstItem="yU1-JC-fN2" firstAttribute="bottom" secondItem="ASf-wg-F7L" secondAttribute="bottomMargin" id="RTu-rG-iRN"/>
+                                                <constraint firstItem="yU1-JC-fN2" firstAttribute="leading" secondItem="YRf-J2-1dE" secondAttribute="trailing" constant="136" id="iRO-oi-xNA"/>
+                                                <constraint firstItem="YRf-J2-1dE" firstAttribute="top" secondItem="ASf-wg-F7L" secondAttribute="top" constant="10" id="nCi-NM-YKz"/>
+                                                <constraint firstItem="yU1-JC-fN2" firstAttribute="centerX" secondItem="ASf-wg-F7L" secondAttribute="centerX" id="xdx-io-0jW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelType" destination="yU1-JC-fN2" id="OpJ-68-wuy"/>
+                                            <outlet property="leftImage" destination="YRf-J2-1dE" id="vqp-er-rX8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="DoJ-eM-bKZ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="POX-Ay-68z"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TdI-vw-k7F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NjN-5D-AmY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TdI-vw-k7F" secondAttribute="trailing" id="SNH-Af-nmN"/>
+                            <constraint firstItem="TdI-vw-k7F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jMt-vk-ab7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TdI-vw-k7F" secondAttribute="bottom" id="yOu-ye-bi7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wbs-FX-R4p">
+                        <barButtonItem key="rightBarButtonItem" title="All" id="iqD-LL-uEV">
+                            <connections>
+                                <action selector="filterButtonPressed:" destination="BYZ-38-t0r" id="SUA-Rw-EcV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mineralTableView" destination="TdI-vw-k7F" id="GyK-iV-JVJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958" y="-564"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pmE-i7-Msh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ijx-pI-060" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lq2-mO-yRt">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="UoL-H9-i1v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRQ-UT-e0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
+        </scene>
+    </scenes>
+</document>
