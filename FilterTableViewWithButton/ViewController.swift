@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  FilterTableViewWithButton
 //
-//  Created by Gillian Reynolds-Titko on 10/30/18.
-//  Copyright © 2018 GRey-T-Programs. All rights reserved.
+//  Created by G R-Titko on 10/30/18.
+//  Copyright © 2018 GRT-Programs. All rights reserved.
 //
 
 import UIKit
