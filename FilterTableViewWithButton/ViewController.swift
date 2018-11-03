@@ -12,18 +12,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mineralTableView: UITableView!
     
-    var currentFilter: String = ""
+    var currentFilter: String = "" {
+        didSet {
+            mineralTableView.reloadData()
+        }
+    }
     var minerals: [MineralModel] = []
     //var filteredMinerals: [MineralModel] = []
     var isFiltering = false
     
-    var filterButtonCounter = 1 {
-        didSet {
-            if mineralTableView != nil {
-                mineralTableView.reloadData()
-            }
-        }
-    }
+    var filterButtonCounter = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +53,7 @@ class ViewController: UIViewController {
         switch filterButtonCounter {
         case 1:
             sender.title = "All"
+            isFiltering = false
             currentFilter = "All"
         case 2:
             sender.title = "Animal"
@@ -104,12 +103,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         //            print("Requests count: \(requests.count)")
         //            return requests.count
         //        }
+        NSLog("FILTERING Cell count: %lld; filter: %@", filteredMineral.count, currentFilter)
         return filteredMineral.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MineralCell", for: indexPath) as! MineralTableViewCell
         
+        NSLog("FILTERING Requesting cell: %lld, %lld; filter: %@", indexPath.section, indexPath.row, currentFilter)
         let mineral = filteredMineral[indexPath.row]
         
         //        if isFiltering {
